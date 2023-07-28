@@ -30,14 +30,14 @@ export class TodoComponent {
 
   }
 
-  completa(todos:Todos){
-   this.todoSvc.completaTodo(todos)
-   this.newTask.completed=true;
+  completa(todos:Todos,completed:boolean){
+   this.todoSvc.completaTodo(todos).then(todos => todos.completed=completed);
 
   }
   delete(todos:Todos){
     this.todoSvc.delete(todos).then(()=>{
       this.todos=this.todos.filter(todos=>todos.id!=this.newTask.id)
+      this.todoSvc.getTodos().then(todos => this.todos=todos)
       this.messaggio="Task Deleted"
     })
   }

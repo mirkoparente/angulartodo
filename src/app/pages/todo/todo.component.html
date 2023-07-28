@@ -13,9 +13,9 @@
 
 
     <div *ngFor="let todo of todos">
-      <div *ngIf="!todos.length;else notask">Oops non ci sono task</div>
+      <div *ngIf="todos.length<1;else notask">Oops non ci sono task</div>
       <ng-template #notask>
-      <p>{{todo.title}} <button (click)="completa(todo)">Completa Task</button> <button (click)="delete(todo)">Elimina Task</button></p>
+      <p>{{todo.title}} <button (click)="completa(todo,true)">Completa Task</button> <button (click)="delete(todo)">Elimina Task</button></p>
 
     </ng-template>
   </div>

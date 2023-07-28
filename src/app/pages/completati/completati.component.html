@@ -1,5 +1,7 @@
 
 <div class="divForm">
+  <p  *ngIf="!todos.length">Recupero task...</p>
+
 <div *ngFor="let todo of todos">
   <p *ngIf="todo.completed">- {{todo.title}}</p>
 </div>
