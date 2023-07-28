@@ -1,0 +1,25 @@
+<div class="divForm">
+  <p  *ngIf="!todos.length">Recupero task...</p>
+  <div *ngIf="todos.length">
+    <form>
+      <input
+      type="text"
+      name="title"
+      [(ngModel)]="newTask.title"
+      placeholder="inserisci task"
+      />
+      <button (click)="creaTask()">+</button>
+    </form>
+
+
+    <div *ngFor="let todo of todos">
+      <div *ngIf="!todos.length;else notask">Oops non ci sono task</div>
+      <ng-template #notask>
+      <p>{{todo.title}} <button (click)="completa(todo)">Completa Task</button> <button (click)="delete(todo)">Elimina Task</button></p>
+
+    </ng-template>
+  </div>
+  <div *ngIf="messaggio">{{messaggio}}</div>
+</div>
+</div>
+

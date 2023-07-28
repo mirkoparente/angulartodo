@@ -1,0 +1,21 @@
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.815);
+  padding: 1.5em;
+}
+
+a{
+  text-decoration: none;
+  margin:0 1em;
+  background-color: rgba(255, 255, 255, 0.422);
+  padding: 1em;
+  border-radius: 1em;
+  color: white;
+  text-align: center;
+}
+a:hover{
+  background-color: rgba(255, 255, 255, 0.622);
+  color: black;
+}
